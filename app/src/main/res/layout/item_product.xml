@@ -1,52 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginStart="14dp"
-    android:layout_marginTop="14dp"
-    android:layout_marginEnd="14dp"
-    android:layout_marginBottom="4dp"
-    app:cardCornerRadius="8dp"
-    android:layout_width="150dp"
-    android:layout_height="200dp">
+    <data>
+<variable
+    name="dataProduct"
+    type="com.example.latihan_livedata.Product" />
+    </data>
 
-    <ImageView
-        android:id="@+id/imgProduct"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"/>
-    <TextView
-        android:textColor="@color/black"
-        android:id="@+id/namaProduct"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="100dp"
-        android:text="Nama Barang"
-        android:textSize="12sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/hargaProduct"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        android:text="Rp.1000"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="115dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <ImageView
-        android:layout_marginTop="47dp"
-        android:src="@drawable/ratingKecil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/descProduct"
-        android:textSize="10sp"
-        android:text="Deskripsi"
-        android:textColor="@color/black"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="140dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewItem"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="4dp"
+        app:cardCornerRadius="8dp"
+        android:layout_width="150dp"
+        android:layout_height="200dp">
 
-</androidx.cardview.widget.CardView>
+        <ImageView
+            app:imageResource="@{dataProduct.img}"
+            android:id="@+id/imgProduct"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/namaProduct"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="100dp"
+            android:text="@{dataProduct.nama}"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/hargaProduct"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:text="@{dataProduct.harga}"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="115dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/descProduct"
+            android:textSize="10sp"
+            android:text="@{dataProduct.desc}"
+            android:textColor="@color/black"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="140dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </androidx.cardview.widget.CardView>
+</layout>

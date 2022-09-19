@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/productFragment">
+
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.example.latihan_livedata.ProductFragment"
+        android:label="ProductFragment" >
+        <action
+            android:id="@+id/action_productFragment_to_detailProduct"
+            app:destination="@id/detailProduct" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailProduct"
+        android:name="com.example.latihan_livedata.DetailProduct"
+        android:label="fragment_detail_product"
+        tools:layout="@layout/fragment_detail_product" />
+</navigation>

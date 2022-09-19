@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DetailProduct">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+<variable
+    name="dataProduct"
+    type="com.example.latihan_livedata.Product" />
+    </data>
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".DetailProduct">
 
-</FrameLayout>
+
+        <ImageView
+            android:id="@+id/imgProduct"
+            app:imageResource="@{dataProduct.img}"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+        <TextView
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:text="@{dataProduct.nama}"
+            android:id="@+id/namaProduct"
+            android:layout_marginStart="20dp"
+            android:layout_below="@+id/imgProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/hargaProduct"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_below="@+id/namaProduct"
+            android:text="@{dataProduct.harga}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="9sp"
+            android:text="@{dataProduct.desc}"
+            android:layout_below="@+id/hargaProduct"
+            android:layout_marginStart="20dp"
+            android:id="@+id/descProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btnBeli"
+            android:text="Buy"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/descProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+</layout>
